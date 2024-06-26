@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.scss";
 import About from "./components/About";
+import ContactSection from "./components/Contacts";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Projects from "./components/Projects";
+import ResumeSection from "./components/Resume";
 import Skills from "./components/Skills";
 import portFolioJson from "./constants/portfolioData";
 import resumeData from "./constants/resumeData";
@@ -24,6 +26,14 @@ const App = () => {
       />
       <Skills
         sharedSkills={resumeData.skills}
+        resumeBasicInfo={portFolioJson.basic_info}
+      />
+      <ContactSection
+        sharedSkills={resumeData.skills}
+        resumeBasicInfo={portFolioJson.basic_info}
+      />
+      <ResumeSection
+        resumeExperience={resumeData.experience}
         resumeBasicInfo={portFolioJson.basic_info}
       />
       <Experience

@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import React from "react";
 import Badge from "react-bootstrap/Badge";
 import {
@@ -5,6 +6,8 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+
+const iconLogo = <Icon icon="mdi:home" />;
 
 function Experience({ resumeExperience, resumeBasicInfo }) {
   let work;
@@ -33,7 +36,7 @@ function Experience({ resumeExperience, resumeBasicInfo }) {
             color: "#fff",
             textAlign: "center",
           }}
-          icon={<i className="fab fa-angular experience-icon"></i>}
+          icon={iconLogo}
           key={i}
         >
           <div style={{ textAlign: "left", marginBottom: "4px" }}>
@@ -77,9 +80,7 @@ function Experience({ resumeExperience, resumeBasicInfo }) {
               color: "#fff",
               textAlign: "center",
             }}
-            icon={
-              <i className="fas fa-hourglass-start mx-auto experience-icon"></i>
-            }
+            icon={iconLogo}
           />
         </VerticalTimeline>
       </div>

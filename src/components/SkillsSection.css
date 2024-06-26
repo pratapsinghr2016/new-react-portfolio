@@ -1,0 +1,40 @@
+.resume-container {
+  position: relative;
+}
+
+.qr-code {
+  display: block;
+  margin: 0 auto;
+}
+
+.download-button {
+  display: block;
+  margin: 20px auto 0;
+}
+
+@media (max-width: 768px) {
+  .qr-code,
+  .download-button {
+    display: none;
+  }
+
+  .resume-container::after {
+    content: "Download Resume";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 769px) {
+  .resume-container::after {
+    display: none;
+  }
+}

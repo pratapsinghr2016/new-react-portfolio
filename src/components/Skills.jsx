@@ -54,7 +54,7 @@ const skillsData = [
   { name: "MySQL", icon: "MySQL" },
 ];
 
-const SkillsSection = () => {
+const ResumeSection = () => {
   const skillStyle = {
     display: "flex",
     justifyContent: "center",
@@ -116,4 +116,4 @@ const SkillsSection = () => {
   );
 };
 
-export default SkillsSection;
+export default ResumeSection;
