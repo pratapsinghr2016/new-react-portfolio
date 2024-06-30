@@ -40,6 +40,47 @@ const settings = {
   ],
 };
 
+const cardStyle = {
+  cursor: "pointer",
+  margin: "20px",
+  transition: "transform 0.3s ease-in-out",
+  display: "flex",
+  justifyContent: "center",
+};
+
+const cardHoverStyle = {
+  transform: "scale(1.05)",
+};
+
+const cardContentStyle = {
+  textAlign: "center",
+  padding: "10px",
+  backgroundColor: "#fff",
+  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+  borderRadius: "10px",
+  position: "relative",
+};
+
+const projectDateStyle = {
+  position: "absolute",
+  top: "10px",
+  left: "10px",
+  backgroundColor: "#444444",
+  color: "white",
+  padding: "5px 10px",
+  borderRadius: "3px",
+  fontSize: "14px",
+  fontWeight: "bold",
+};
+
+const projectTitleStyle = {
+  fontWeight: "bold",
+  textAlign: "center",
+  marginTop: "10px",
+  fontSize: "18px",
+  color: "#333",
+};
+
 function Projects({ resumeProjects, resumeBasicInfo }) {
   const [detailsModalShow, setDetailsModalShow] = useState(false);
   const [deps, setDeps] = useState({});
@@ -55,47 +96,6 @@ function Projects({ resumeProjects, resumeBasicInfo }) {
   if (resumeProjects && resumeBasicInfo) {
     sectionName = resumeBasicInfo.projects;
     projects = resumeProjects.map((project) => {
-      const cardStyle = {
-        cursor: "pointer",
-        margin: "20px",
-        transition: "transform 0.3s ease-in-out",
-        display: "flex",
-        justifyContent: "center",
-      };
-
-      const cardHoverStyle = {
-        transform: "scale(1.05)",
-      };
-
-      const cardContentStyle = {
-        textAlign: "center",
-        padding: "10px",
-        backgroundColor: "#fff",
-        boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-        borderRadius: "10px",
-        position: "relative",
-      };
-
-      const projectDateStyle = {
-        position: "absolute",
-        top: "10px",
-        left: "10px",
-        backgroundColor: "rgba(0, 0, 0, 0.8)",
-        color: "white",
-        padding: "5px 10px",
-        borderRadius: "3px",
-        fontSize: "14px",
-        fontWeight: "bold",
-      };
-
-      const projectTitleStyle = {
-        fontWeight: "bold",
-        textAlign: "center",
-        marginTop: "10px",
-        fontSize: "18px",
-        color: "#333",
-      };
-
       return (
         <div
           className="col-sm-12 col-md-6 col-lg-4"
@@ -122,6 +122,7 @@ function Projects({ resumeProjects, resumeBasicInfo }) {
                   position: "relative",
                   width: "100%",
                   borderRadius: "10px 10px 0 0",
+                  border: "4px solid #efe1bd",
                 }}
               />
               <span style={projectDateStyle}>{project.startDate}</span>
