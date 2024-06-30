@@ -1,3 +1,4 @@
+import emailjs from "emailjs-com";
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import "react-vertical-timeline-component/style.min.css";
@@ -33,10 +34,29 @@ function ContactsSection({ resumeExperience, resumeBasicInfo }) {
   const [email, setEmail] = useState("");
   const [body, setBody] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Email:", email);
-    console.log("Body:", body);
+
+    try {
+      console.log("Email:", email);
+      console.log("Body:", body);
+      const response = await emailjs.send(
+        "service_y8jsc8q", // Replace with your service ID
+        "template_1eq5sjb", // Replace with your template ID
+        {
+          from_email: email,
+          message: body,
+        },
+        "QhFd89M-SHhCm7ibF" // Replace with your user ID
+      );
+      console.log("Email sent successfully:", response.status, response.text);
+      setEmail("");
+      setBody("");
+      alert("Email sent successfully!");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Something went wrong, please contact on other modes");
+    }
   };
 
   return (
