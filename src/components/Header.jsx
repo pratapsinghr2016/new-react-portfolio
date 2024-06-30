@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Switch from "react-switch";
 import { ReactTyped } from "react-typed";
-import macImage from "./macImage.png";
-import waveHand from "./waving-hand.svg";
+import macImage from "./assets/macImage.png";
+import waveHand from "./assets/waving-hand.svg";
 
 const Header = ({ sharedData }) => {
   const [checked, setChecked] = useState(false);

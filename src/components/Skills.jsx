@@ -1,57 +1,75 @@
 import {
-  faAngular,
-  faAws,
   faBootstrap,
   faCss3Alt,
-  faCuttlefish,
   faDocker,
   faGithub,
   faHtml5,
-  faJava,
   faJsSquare,
-  faMicrosoft,
   faNodeJs,
-  faPhp,
-  faPython,
   faReact,
   faSass,
 } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-
-// Create a map of icon names to Font Awesome icons
-const iconMap = {
-  HTML5: faHtml5,
-  CSS3: faCss3Alt,
-  Angular: faAngular,
-  TypeScript: faJsSquare,
-  JavaScript: faJsSquare,
-  Sass: faSass,
-  Bootstrap: faBootstrap,
-  React: faReact,
-  NodeJS: faNodeJs,
-  Python: faPython,
-  Java: faJava,
-  PHP: faPhp,
-  MySQL: faDatabase,
-  GitHub: faGithub,
-  Docker: faDocker,
-  AWS: faAws,
-  CSharp: faMicrosoft,
-  CPlusPlus: faCuttlefish,
-};
+import antd from "./assets/antd.svg";
+import apollo from "./assets/apollo.svg";
+import aws from "./assets/aws.svg";
+import chart from "./assets/chart.svg";
+import cms from "./assets/cms.svg";
+import express from "./assets/express.svg";
+import gateway from "./assets/gateway.svg";
+import graphql from "./assets/graphql.svg";
+import headless from "./assets/headless.svg";
+import jest from "./assets/jest.svg";
+import kub from "./assets/kub.svg";
+import mfe from "./assets/mfe.svg";
+import mongo from "./assets/mongo.svg";
+import mui from "./assets/mui.svg";
+import nest from "./assets/nestjs.svg";
+import faNextJs from "./assets/nextjs.svg";
+import reactN from "./assets/reactN.svg";
+import redux from "./assets/redux.svg";
+import sonarqube from "./assets/sonarqube.svg";
+import storybook from "./assets/storybook.svg";
+import typescript from "./assets/typescript.svg";
+import vite from "./assets/vite.svg";
+import webpack from "./assets/webpack.svg";
 
 const skillsData = [
-  { name: "HTML5", icon: "HTML5" },
-  { name: "CSS3", icon: "CSS3" },
-  { name: "Angular", icon: "Angular" },
-  { name: "TypeScript", icon: "TypeScript" },
-  { name: "JavaScript", icon: "JavaScript" },
-  { name: "Sass", icon: "Sass" },
-  { name: "Bootstrap", icon: "Bootstrap" },
-  { name: "C#", icon: "CSharp" },
-  { name: "MySQL", icon: "MySQL" },
+  { name: "HTML5", icon: faHtml5, type: "icn" },
+  { name: "CSS3", icon: faCss3Alt, type: "icn" },
+  { name: "JavaScript", icon: faJsSquare, type: "icn" },
+  { name: "Nodejs", icon: faNodeJs, type: "icn" },
+  { name: "React", icon: faReact, type: "icn" },
+  { name: "Sass", icon: faSass, type: "icn" },
+  { name: "Bootstrap", icon: faBootstrap, type: "icn" },
+  { name: "MySQL", icon: faDatabase, type: "icn" },
+  { name: "Docker", icon: faDocker, type: "icn" },
+  { name: "Git", icon: faGithub, type: "icn" },
+  { name: "Next.js", icon: faNextJs, type: "img" },
+  { name: "MUI", icon: mui, type: "img" },
+  { name: "AntD", icon: antd, type: "img" },
+  { name: "Redux", icon: redux, type: "img" },
+  { name: "ReactNative", icon: reactN, type: "img" },
+  { name: "TypeScript", icon: typescript, type: "img" },
+  { name: "Micro_FE", icon: mfe, type: "img" },
+  { name: "Storybook", icon: storybook, type: "img" },
+  { name: "Webpack", icon: webpack, type: "img" },
+  { name: "Vite", icon: vite, type: "img" },
+  { name: "Chartjs", icon: chart, type: "img" },
+  { name: "CMS", icon: cms, type: "img" },
+  { name: "HeadlessCMS", icon: headless, type: "img" },
+  { name: "Jest", icon: jest, type: "img" },
+  { name: "SonarQube", icon: sonarqube, type: "img" },
+  { name: "ExpressJS", icon: express, type: "img" },
+  { name: "NestJS", icon: nest, type: "img" },
+  { name: "GraphQL", icon: graphql, type: "img" },
+  { name: "Apollo", icon: apollo, type: "img" },
+  { name: "AWS", icon: aws, type: "img" },
+  { name: "Kubernetes", icon: kub, type: "img" },
+  { name: "Gateways", icon: gateway, type: "img" },
+  { name: "MongoDB", icon: mongo, type: "img" },
 ];
 
 const ResumeSection = () => {
@@ -108,7 +126,23 @@ const ResumeSection = () => {
               Object.assign(e.currentTarget.style, skillStyle)
             }
           >
-            <FontAwesomeIcon icon={iconMap[skill.icon]} style={iconStyle} />
+            <span
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {skill.type === "icn" ? (
+                <FontAwesomeIcon icon={skill.icon} style={iconStyle} />
+              ) : (
+                <img src={skill.icon} width={40} height={40} />
+              )}
+              <small style={{ fontSize: "1.25rem", marginTop: 3 }}>
+                {skill.name}
+              </small>
+            </span>
           </div>
         ))}
       </div>

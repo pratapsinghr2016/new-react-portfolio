@@ -1,6 +1,33 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import "react-vertical-timeline-component/style.min.css";
+import github from "./assets/github.svg";
+import hashnode from "./assets/hashnode.svg";
+import linkedIn from "./assets/linkedin.svg";
+import whatsapp from "./assets/whatsapp.svg";
+
+const skillStyle = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  margin: "10px",
+  padding: "20px",
+  borderRadius: "10px",
+  backgroundColor: "#444",
+  color: "#ffffff",
+  fontSize: "20px",
+  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+  width: "80px",
+  height: "80px",
+  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
+};
+
+const contactDetails = [
+  { url: "https://linkedin.com", img: linkedIn },
+  { url: "https://github.com", img: github },
+  { url: "https://wa.me/yourwhatsappnumber", img: whatsapp },
+  { url: "", img: hashnode },
+];
 
 function ContactsSection({ resumeExperience, resumeBasicInfo }) {
   const [email, setEmail] = useState("");
@@ -8,7 +35,6 @@ function ContactsSection({ resumeExperience, resumeBasicInfo }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here
     console.log("Email:", email);
     console.log("Body:", body);
   };
@@ -26,7 +52,35 @@ function ContactsSection({ resumeExperience, resumeBasicInfo }) {
             </h1>
           </Col>
         </Row>
-        <Row className="justify-content-center" style={{ marginTop: -10 }}>
+        <Row className="justify-content-center mb-4" style={{ marginTop: -10 }}>
+          <Col className="text-center">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {contactDetails.map((contact, index) => (
+                <div style={skillStyle} key={index}>
+                  <a
+                    href={contact.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={contact.img}
+                      alt="LinkedIn"
+                      width={40}
+                      height={40}
+                    />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </Col>
+        </Row>
+        <Row className="justify-content-center" style={{ marginTop: 40 }}>
           <Col md={8}>
             <Form
               onSubmit={handleSubmit}

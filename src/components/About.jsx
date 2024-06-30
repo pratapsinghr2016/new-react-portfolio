@@ -3,7 +3,7 @@ import reactIcon from "@iconify/icons-logos/react";
 import vueIcon from "@iconify/icons-logos/vue";
 import { Icon } from "@iconify/react";
 import React from "react";
-import myProfile from "./myProfile.jpg";
+import myProfile from "./assets/myProfile.jpg";
 
 function About(props) {
   const { resumeBasicInfo } = props;
@@ -24,8 +24,8 @@ function About(props) {
         <div className="row center mx-auto mb-5">
           <div className="col-md-4 mb-5 center">
             <div className="polaroid">
-              <span style={{ cursor: "auto" }}>
-                <img height="250px" src={myProfile} alt="Avatar placeholder" />
+              <span style={{ cursor: "auto", backgroundColor: "#444444" }}>
+                <img height={250} src={myProfile} alt="Avatar placeholder" />
                 <Icon
                   icon={angularIcon}
                   style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
@@ -46,23 +46,11 @@ function About(props) {
             <div className="col-md-10">
               <div className="card">
                 <div className="card-header">
-                  <span
-                    className="iconify"
-                    data-icon="emojione:red-circle"
-                    data-inline="false"
-                  ></span>{" "}
+                  <Icon icon="emojione:red-circle" />
                   &nbsp;
-                  <span
-                    className="iconify"
-                    data-icon="twemoji:yellow-circle"
-                    data-inline="false"
-                  ></span>{" "}
+                  <Icon icon="twemoji:yellow-circle" />
                   &nbsp;
-                  <span
-                    className="iconify"
-                    data-icon="twemoji:green-circle"
-                    data-inline="false"
-                  ></span>
+                  <Icon icon="twemoji:green-circle" />
                 </div>
                 <div
                   className="card-body font-trebuchet text-justify ml-3 mr-3"

@@ -1,8 +1,7 @@
 export default {
   basic_info: {
     description_header: "Hi",
-    description:
-      "👋 I'm Davina Griss. Fictional person for preview purposes :) I'm working with newest front-end frameworks like Angular, React and Vue. What you are seeing now is portfolio template from Dorota1997. If you like this portfolio template, make sure to ⭐ the repository to make it more recognizable for other users. Thank you 💜",
+    description: `🌟 With 6 years in IT and 5 years in Software full-stack development, I'm proficient in React, Node.js, and Java. I've built scalable solutions, incorporating server-side rendering, pagination, and infinite scroll. 🚀 I implement TDD using JEST and RTL, enhancing code quality with SonarQube. My design systems utilize styled-components, Tailwind CSS, Material UI, and Ant Design, with Figma and Zeplin handovers. 🎨 I developed dashboards, including AirAsia's booking app, and optimize SEO using Lighthouse and Google Analytics. 📈 My e-commerce apps achieve high performance with image optimization. 🛒 In Agile environments, I plan SPRINTs and lead retrospectives. I've introduced micro-frontends with Module Federation and monorepo architectures, developed private libraries, and reduced development time by 50%. 🛠️ Additionally, I've crafted hybrid architectures with React, Next.js, and Redux, enhancing application performance and UX. 💡`,
     section_name: {
       about: "About me",
       projects: "Projects",

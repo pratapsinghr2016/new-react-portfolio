@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { QRCode } from "react-qrcode-logo";
-import download from "./download.gif";
-import resumeLocalLink from "./Rajat_Pratap_Singh_Resume_Frontend_SDE3.pdf";
+import download from "./assets/download.gif";
+import resumeLocalLink from "./assets/Rajat_Pratap_Singh_Resume_Frontend_SDE3.pdf";
 
 const resumeLinkUrl =
   "https://drive.google.com/file/d/12EFKUXPtDJHnkObbulV4b2QkaSOpF2jY/view?usp=sharing";
